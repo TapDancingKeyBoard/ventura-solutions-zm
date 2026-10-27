@@ -210,7 +210,7 @@ section:not(.dark) .step::before { color: var(--red); }
 .mvv p { color: var(--muted); margin: 0; }
 .values { display: flex; flex-wrap: wrap; gap: 10px; }
 .values span { padding: 12px 20px; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); color: #fff; font-weight: 600; }
-.reg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+.reg { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; }
 .reg > div { padding: 22px; border-radius: var(--radius); background: var(--bg-2); }
 .reg small { font-family: var(--mono); font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); display: block; margin-bottom: 6px; }
 .reg b { color: var(--ink); }
