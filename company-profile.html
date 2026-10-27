@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ventura Solutions Zambia — Company Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  :root {
+    --navy: #1E2240; --ink: #12142A; --red: #C62A35; --red-soft: #FCEBEC;
+    --text: #2B2E40; --muted: #5E6378; --line: #E4E6EE; --bg-2: #F5F6FA;
+    --sans: 'Plus Jakarta Sans', system-ui, sans-serif; --mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html, body { margin: 0; background: #d9dbe3; }
+  body { font-family: var(--sans); color: var(--text); font-size: 10.5pt; line-height: 1.55; }
+  .page { width: 210mm; height: 297mm; margin: 10mm auto; background: #fff; position: relative; overflow: hidden; padding: 20mm 18mm 22mm; page-break-after: always; break-after: page; display: flex; flex-direction: column; }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+  @media print { html, body { background: #fff; } .page { margin: 0; } }
+  h1, h2, h3, h4 { color: var(--ink); margin: 0 0 .4em; letter-spacing: -0.025em; line-height: 1.1; font-weight: 800; }
+  h2 { font-size: 26pt; }
+  h3 { font-size: 13pt; letter-spacing: -0.01em; }
+  p { margin: 0 0 .8em; }
+  .eyebrow { font-family: var(--mono); font-size: 7.5pt; letter-spacing: .16em; text-transform: uppercase; color: var(--red); display: block; margin-bottom: 4mm; }
+  .hl { background: linear-gradient(transparent 72%, var(--red) 72%, var(--red) 90%, transparent 90%); }
+  .lead { font-size: 12.5pt; color: var(--muted); max-width: 150mm; }
+  .muted { color: var(--muted); }
+
+  /* running footer */
+  .pfoot { position: absolute; left: 18mm; right: 18mm; bottom: 10mm; display: flex; justify-content: space-between; font-family: var(--mono); font-size: 7pt; color: #9AA0B4; border-top: 1px solid var(--line); padding-top: 3mm; }
+
+  /* cover */
+  .cover { background: radial-gradient(160mm 120mm at 100% 0%, rgba(198,42,53,.35), transparent 60%), var(--navy); color: rgba(255,255,255,.75); padding: 22mm 20mm; }
+  .cover::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 12mm 12mm; mask-image: linear-gradient(to bottom, #000, transparent 85%); }
+  .cover > * { position: relative; }
+  .logo-chip { background: #fff; border-radius: 4mm; padding: 4mm 6mm; align-self: flex-start; }
+  .logo-chip img { height: 16mm; display: block; }
+  .cover h1 { color: #fff; font-size: 44pt; line-height: 1.02; margin-top: auto; }
+  .cover h1 > span { display: block; }
+  .cover .eyebrow { color: #FF8C93; }
+  .cover-meta { margin-top: 14mm; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,.15); font-family: var(--mono); font-size: 7.5pt; }
+  .cover-meta div { padding: 5mm 4mm 0 0; }
+  .cover-meta b { display: block; color: #fff; }
+  .cover-title { font-family: var(--mono); color: #fff; font-size: 9pt; letter-spacing: .2em; text-transform: uppercase; margin-top: 8mm; }
+
+  /* blocks */
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; }
+  .card { border: 1px solid var(--line); border-radius: 4mm; padding: 6mm; }
+  .card.soft { background: var(--bg-2); border-color: var(--bg-2); }
+  .card p { margin: 0; color: var(--muted); font-size: 9.5pt; }
+  .card .eyebrow { margin-bottom: 2.5mm; }
+  .facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 2px solid var(--ink); margin: 8mm 0; }
+  .facts div { padding: 4mm 3mm 0 0; font-family: var(--mono); font-size: 7.5pt; color: var(--muted); }
+  .facts b { display: block; font-family: var(--sans); font-size: 12pt; color: var(--ink); letter-spacing: -0.01em; }
+  .dark-band { background: var(--navy); color: rgba(255,255,255,.75); border-radius: 5mm; padding: 7mm 8mm; }
+  .dark-band h2, .dark-band h3 { color: #fff; }
+  .dark-band .eyebrow { color: #FF8C93; }
+  .values { display: flex; flex-wrap: wrap; gap: 2.5mm; margin-top: 5mm; }
+  .values span { border: 1px solid rgba(255,255,255,.25); color: #fff; border-radius: 99px; padding: 2mm 4.5mm; font-weight: 600; font-size: 9.5pt; }
+  .promise { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
+  .promise div { padding: 4.5mm 5mm 4.5mm 0; border-bottom: 1px solid var(--line); }
+  .promise h4 { font-size: 10.5pt; margin-bottom: 1mm; letter-spacing: -0.01em; }
+  .promise p { margin: 0; color: var(--muted); font-size: 9.2pt; }
+
+  .svc { display: grid; grid-template-columns: 11mm 1fr; gap: 4mm; padding: 4.2mm 0; border-top: 1px solid var(--line); }
+  .svc .ic { width: 11mm; height: 11mm; border-radius: 3mm; background: var(--navy); color: #fff; display: grid; place-items: center; }
+  .svc .ic svg { width: 5.5mm; height: 5.5mm; }
+  .svc h3 { font-size: 11.5pt; margin-bottom: 1mm; }
+  .svc p { margin: 0 0 1.5mm; color: var(--muted); font-size: 9.2pt; }
+  .svc .num { font-family: var(--mono); font-size: 7pt; color: var(--red); }
+  .chips { display: flex; flex-wrap: wrap; gap: 1.5mm; }
+  .chips span { font-size: 7.5pt; font-weight: 600; padding: .8mm 2.5mm; border-radius: 99px; background: var(--bg-2); color: var(--navy); }
+
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4mm; counter-reset: s; }
+  .step { border-radius: 4mm; padding: 5mm; background: var(--bg-2); }
+  .step::before { counter-increment: s; content: '0' counter(s); font-family: var(--mono); font-size: 8pt; color: var(--red); display: block; margin-bottom: 4mm; }
+  .step h4 { font-size: 10.5pt; margin-bottom: 1.5mm; }
+  .step p { margin: 0; font-size: 8.8pt; color: var(--muted); }
+  .dark-band .step { background: rgba(255,255,255,.07); }
+  .dark-band .step::before { color: #FF8C93; }
+  .dark-band .step h4 { color: #fff; }
+  .dark-band .step p { color: rgba(255,255,255,.65); }
+
+  .ic-soft { width: 10mm; height: 10mm; border-radius: 3mm; background: var(--red-soft); color: var(--red); display: grid; place-items: center; margin-bottom: 3mm; }
+  .ic-soft svg { width: 5.5mm; height: 5.5mm; }
+  .checks { list-style: none; padding: 0; margin: 0; display: grid; gap: 2.5mm; }
+  .checks li { display: flex; gap: 2.5mm; font-size: 9.5pt; }
+  .checks li::before { content: ''; flex: none; width: 2mm; height: 2mm; border-radius: .5mm; background: var(--red); margin-top: 1.6mm; }
+  .todo { background: #FFF5D6; color: #7A5B00; padding: 0 1.5mm; border-radius: 1mm; font-weight: 600; }
+
+  .back { background: var(--red); color: rgba(255,255,255,.85); }
+  .back h2 { color: #fff; font-size: 34pt; }
+  .back .eyebrow { color: #fff; opacity: .75; }
+  .contact-list { display: grid; grid-template-columns: 1fr 1fr; gap: 7mm 10mm; margin-top: 12mm; }
+  .contact-list h4 { font-family: var(--mono); font-size: 7.5pt; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.7); font-weight: 600; margin-bottom: 1.5mm; }
+  .contact-list p { color: #fff; font-weight: 600; font-size: 11pt; margin: 0; }
+</style>
+</head>
+<body>
+
+<!-- 1. Cover -->
+<section class="page cover">
+  <div class="logo-chip"><img src="assets/logo.png" alt="Ventura Solutions Zambia Limited"></div>
+  <div class="cover-title">Company Profile · 2026</div>
+  <h1>
+    <span>Keep every register right.</span>
+    <span>Run every AGM.</span>
+    <span>Return every <span class="hl">lost share.</span></span>
+  </h1>
+  <p style="font-size:12.5pt;max-width:140mm;margin-top:6mm">Share registry management, corporate actions, virtual meetings and asset reunification for Zambia's capital market.</p>
+  <div class="cover-meta">
+    <div><b>SECZ registered</b>Share transfer agent</div>
+    <div><b>Lusaka, Zambia</b>Woodlands office</div>
+    <div><b>venturasolutionszm.com</b>enquiries@venturasolutionszm.com</div>
+  </div>
+</section>
+
+<!-- 2. Who we are -->
+<section class="page">
+  <span class="eyebrow">01 · Who we are</span>
+  <h2>Quality registry services shouldn't be only for <span class="hl">the biggest companies.</span></h2>
+  <div class="grid2" style="margin-top:6mm">
+    <div>
+      <p><strong style="color:var(--ink)">Ventura Solutions Zambia Limited is a full-service share transfer agent</strong>, built on modern digital platforms to meet every share transfer need in Zambia's capital market.</p>
+      <p>We exist to bring high-quality, affordable share registry management to listed companies of all sizes — small, medium and large. Too often, good transfer secretarial services have been out of reach for smaller companies. We're changing that.</p>
+    </div>
+    <div>
+      <p>Our team brings a long, proven track record in securities registry, investor services and corporate actions, and has taken part in many corporate action transactions across Zambia.</p>
+      <p>We sit between listed companies and their shareholders — handling everything from routine register updates to complex corporate actions — so our clients can focus on their core business.</p>
+    </div>
+  </div>
+
+  <div class="facts">
+    <div><b>SECZ</b>Registered transfer agent</div>
+    <div><b>8</b>Specialist services</div>
+    <div><b>LuSE CSD</b>Dematerialisation</div>
+    <div><b>Pre-1994</b>Lost share recovery</div>
+  </div>
+
+  <div class="grid3">
+    <div class="card soft"><span class="eyebrow">Mission</span><p>To provide the most customer-centric service and digital solutions that serve and integrate with our clients' objectives — ensuring stakeholder satisfaction at every level.</p></div>
+    <div class="card soft"><span class="eyebrow">Vision</span><p>To transform Zambia's capital market industry by providing differentiated products and services that meet the specific expectations of our clients.</p></div>
+    <div class="card soft"><span class="eyebrow">Philosophy</span><p>Respond immediately to client needs, keep improving our services, build long-term relationships, and embrace innovation to stay ahead of a changing market.</p></div>
+  </div>
+
+  <div class="grid3" style="margin-top:auto">
+    <div class="card"><span class="eyebrow">Registered name</span><p style="color:var(--ink);font-weight:700">Ventura Solutions Zambia Limited</p></div>
+    <div class="card"><span class="eyebrow">Regulator</span><p style="color:var(--ink);font-weight:700">Securities and Exchange Commission of Zambia</p></div>
+    <div class="card"><span class="eyebrow">Company reg. no.</span><p><span class="todo">To confirm</span></p></div>
+  </div>
+  <div class="pfoot"><span>Ventura Solutions Zambia Limited</span><span>Company Profile · 02</span></div>
+</section>
+
+<!-- 3. Values & promise -->
+<section class="page">
+  <span class="eyebrow">02 · What we stand for</span>
+  <h2>Customer service, not just service.</h2>
+  <p class="lead">A good product isn't enough. How we treat our clients — and how easy we make it to do business with us — is what sets Ventura apart.</p>
+
+  <div class="dark-band" style="margin:6mm 0 8mm">
+    <span class="eyebrow">Our values</span>
+    <h3 style="font-size:15pt">Every member of our team upholds these in every interaction.</h3>
+    <div class="values">
+      <span>Honesty</span><span>Integrity</span><span>Reliability</span><span>Fortitude</span><span>Excellence</span><span>Temperance</span><span>Objective-driven effort</span><span>Customer satisfaction</span>
+    </div>
+  </div>
+
+  <span class="eyebrow">Our service promise</span>
+  <div class="promise">
+    <div><h4>Personal service</h4><p>We know our clients and remember your preferences. You're a client, not a transaction.</p></div>
+    <div><h4>Responsiveness</h4><p>Calls, emails and enquiries answered promptly. If we don't know yet, we say when we will.</p></div>
+    <div><h4>Going the extra mile</h4><p>We don't just hand you a form — we help you complete it and explain what happens next.</p></div>
+    <div><h4>Convenience</h4><p>Minimal paperwork, follow-ups and waiting, with services where and when they suit you.</p></div>
+    <div><h4>Ownership</h4><p>One person takes responsibility for your issue and keeps you informed until it's resolved.</p></div>
+    <div><h4>Clear communication</h4><p>You always know what's happening, what's needed from you, and what comes next.</p></div>
+    <div><h4>Reliability</h4><p>We do what we say we'll do, when we said we'd do it. Consistency builds trust.</p></div>
+    <div><h4>Technology-driven</h4><p>Digital registry, meeting and voting platforms that cut delays and paperwork.</p></div>
+  </div>
+  <div class="pfoot"><span>Ventura Solutions Zambia Limited</span><span>Company Profile · 03</span></div>
+</section>
+
+<!-- 4. Services -->
+<section class="page">
+  <span class="eyebrow">03 · Services for companies</span>
+  <h2>Everything a share register needs, under one roof.</h2>
+  <p class="lead" style="margin-bottom:5mm">Pick a single service or hand us the whole register.</p>
+
+  <div class="grid2" style="gap:0 8mm">
+    <div>
+      <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><div><span class="num">01</span><h3>Share register management</h3><p>Accurate, centralised shareholder records with full visibility of your register.</p><div class="chips"><span>Detail updates</span><span>Queries</span><span>Trade monitoring</span><span>Reports</span></div></div></div>
+      <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10M19 21V10M9.5 21V10M14.5 21V10M2 10l10-6 10 6z"/></svg></div><div><span class="num">02</span><h3>Bond register maintenance</h3><p>Bondholder records reconciled with LuSE, brokers and custodians, with strict observation of payment dates.</p><div class="chips"><span>Reconciliation</span><span>Record dates</span><span>Quarterly reports</span></div></div></div>
+      <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18M9 15l2 2 4-4"/></svg></div><div><span class="num">03</span><h3>Corporate action handling</h3><p>The full spectrum of corporate actions, run by an experienced team.</p><div class="chips"><span>Dividends</span><span>AGMs &amp; EGMs</span><span>Mandatory offers</span><span>Consolidations</span><span>Bonus issues</span><span>IPOs</span></div></div></div>
+      <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 17l6-6"/></svg></div><div><span class="num">04</span><h3>Medium Term Note Programme</h3><p>Note management from pre- to post-transaction, in line with LuSE CSD requirements.</p><div class="chips"><span>Advisory</span><span>Applications</span><span>Allotment</span><span>Reporting</span></div></div></div>
+    </div>
+    <div>
+      <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m22 8-6 4 6 4z"/></svg></div><div><span class="num">05</span><h3>Virtual Meeting Platform</h3><p>Secure cloud platform for AGMs, EGMs, board meetings and webinars — online, hybrid or physical.</p><div class="chips"><span>Validation</span><span>Registration</span><span>Documents</span><span>Q&amp;A</span><span>Live voting</span></div></div></div>
+      <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V4h10v7M10 7.5l1.5 1.5 3-3"/></svg></div><div><span class="num">06</span><h3>Electronic voting</h3><p>Real-time, auditable voting for listed companies, private organisations and co-operatives.</p><div class="chips"><span>Weighted</span><span>Non-weighted</span><span>Analytics</span><span>Results reports</span></div></div></div>
+      <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg></div><div><span class="num">07</span><h3>Unclaimed dividend management</h3><p>Identifying, tracing and paying shareholders whose dividends were never collected.</p><div class="chips"><span>Tracing</span><span>Estates</span><span>Reports</span><span>Claims</span></div></div></div>
+      <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-15.5 6.3L3 16M3 12a9 9 0 0 1 15.5-6.3L21 8"/><path d="M21 3v5h-5M3 21v-5h5"/></svg></div><div><span class="num">08</span><h3>DRP &amp; ESOP</h3><p>Dividend Reinvestment Plans and Employee Share Ownership Plans, administered end to end.</p><div class="chips"><span>Scheme registers</span><span>Reconciliations</span><span>Broker interface</span></div></div></div>
+    </div>
+  </div>
+  <div class="pfoot"><span>Ventura Solutions Zambia Limited</span><span>Company Profile · 04</span></div>
+</section>
+
+<!-- 5. VARP -->
+<section class="page">
+  <span class="eyebrow">04 · Ventura Asset Reunification Program (VARP)</span>
+  <h2>Your family's forgotten shares, <span class="hl">found and returned.</span></h2>
+  <p class="lead" style="font-size:11pt">Many Zambians bought shares on the Lusaka Securities Exchange before 1994 and lost track of them — through a move, a changed bank account or a death in the family. VARP reconnects investors and their beneficiaries with long-lost shares and dividends.</p>
+
+  <div class="grid3" style="margin:5mm 0 6mm">
+    <div class="card">
+      <div class="ic-soft"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></div>
+      <h3>Deceased estates</h3><p>Administering a late shareholder's holdings, including share splits so each heir receives their portion.</p>
+    </div>
+    <div class="card">
+      <div class="ic-soft"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg></div>
+      <h3>Unclaimed dividends</h3><p>Recovering dividends lost to outdated bank details, unreported deaths or administrative gaps.</p>
+    </div>
+    <div class="card">
+      <div class="ic-soft"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 13h6M9 17h4"/></svg></div>
+      <h3>Dematerialisation</h3><p>Converting physical share certificates into secure electronic holdings in the LuSE CSD.</p>
+    </div>
+  </div>
+
+  <div class="dark-band">
+    <span class="eyebrow">How it works</span>
+    <h3 style="font-size:14pt;margin-bottom:4mm">From a hunch to shares in your name.</h3>
+    <div class="steps">
+      <div class="step"><h4>Get in touch</h4><p>Share the shareholder's name and anything you remember.</p></div>
+      <div class="step"><h4>We search</h4><p>We check the registers for holdings and unpaid dividends.</p></div>
+      <div class="step"><h4>We guide the paperwork</h4><p>Including estates and splits between beneficiaries.</p></div>
+      <div class="step"><h4>Assets returned</h4><p>Shares placed in the CSD; dividends paid out.</p></div>
+    </div>
+  </div>
+
+  <div class="grid2" style="margin-top:6mm">
+    <div>
+      <span class="eyebrow">Helpful to have</span>
+      <ul class="checks">
+        <li>Shareholder's full name and NRC or passport</li>
+        <li>Any old certificate, dividend cheque or company letter</li>
+        <li>For estates: death certificate and letters of administration</li>
+      </ul>
+    </div>
+    <div class="card soft" style="align-self:start">
+      <span class="eyebrow">Start a check</span>
+      <p style="color:var(--ink);font-size:13pt;font-weight:800;letter-spacing:-.01em">+260 977 899 379</p>
+      <p>Call, WhatsApp or email enquiries@venturasolutionszm.com</p>
+    </div>
+  </div>
+  <div class="pfoot"><span>Ventura Solutions Zambia Limited</span><span>Company Profile · 05</span></div>
+</section>
+
+<!-- 6. Working with us -->
+<section class="page">
+  <span class="eyebrow">05 · Working with Ventura</span>
+  <h2>Moving your register to us is straightforward.</h2>
+  <p class="lead" style="margin-bottom:7mm">Whether you're appointing a transfer agent for the first time or switching, we make the handover simple.</p>
+  <div class="steps">
+    <div class="step"><h4>Initial meeting</h4><p>We understand your register, upcoming corporate actions and reporting needs.</p></div>
+    <div class="step"><h4>Proposal</h4><p>A clear scope and fee proposal sized to your company.</p></div>
+    <div class="step"><h4>Handover</h4><p>We receive and reconcile the register with your previous agent and the CSD.</p></div>
+    <div class="step"><h4>Ongoing service</h4><p>A named contact, regular reports and support for every corporate action.</p></div>
+  </div>
+
+  <div class="grid2" style="margin-top:10mm">
+    <div class="card">
+      <span class="eyebrow">Who we serve</span>
+      <ul class="checks">
+        <li>LuSE-listed companies of every size</li>
+        <li>Bond and Medium Term Note issuers</li>
+        <li>Private companies, associations and co-operatives (meetings &amp; e-voting)</li>
+        <li>Employers running ESOP schemes</li>
+        <li>Shareholders, families and estate administrators</li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="eyebrow">Why Ventura</span>
+      <ul class="checks">
+        <li>Affordable, quality service for small, medium and large issuers</li>
+        <li>Experienced team with a track record in Zambian corporate actions</li>
+        <li>Own virtual meeting and e-voting platforms</li>
+        <li>One named contact who owns your issue</li>
+        <li>Clear, regular reporting</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card soft" style="margin-top:8mm">
+    <span class="eyebrow">Selected clients &amp; team</span>
+    <p><span class="todo">Optional — add client logos, key team members and their experience here once confirmed by Ventura.</span></p>
+  </div>
+  <div class="pfoot"><span>Ventura Solutions Zambia Limited</span><span>Company Profile · 06</span></div>
+</section>
+
+<!-- 7. Back cover -->
+<section class="page back">
+  <div class="logo-chip"><img src="assets/logo.png" alt="Ventura Solutions Zambia Limited"></div>
+  <div style="margin-top:auto">
+    <span class="eyebrow">Contact us</span>
+    <h2>Let's talk about your register.</h2>
+    <p style="font-size:13pt;max-width:140mm">Switching transfer agents, planning an AGM or chasing a lost share — we'll tell you exactly what's involved.</p>
+    <div class="contact-list">
+      <div><h4>Office</h4><p>Plot 29 Nalikwada Road, Woodlands<br>P.O. Box 37573, Lusaka, Zambia</p></div>
+      <div><h4>Phone &amp; WhatsApp</h4><p>+260 951 595 566<br>+260 977 899 379</p></div>
+      <div><h4>Email</h4><p>enquiries@venturasolutionszm.com<br>prisca@venturasolutionszm.com</p></div>
+      <div><h4>Web &amp; hours</h4><p>venturasolutionszm.com<br>Mon–Fri 08:00–17:00</p></div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
