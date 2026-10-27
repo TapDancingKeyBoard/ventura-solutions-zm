@@ -32,9 +32,13 @@
   .pfoot { position: absolute; left: 18mm; right: 18mm; bottom: 10mm; display: flex; justify-content: space-between; font-family: var(--mono); font-size: 7pt; color: #9AA0B4; border-top: 1px solid var(--line); padding-top: 3mm; }
 
   /* cover */
-  .cover { background: radial-gradient(160mm 120mm at 100% 0%, rgba(198,42,53,.35), transparent 60%), var(--navy); color: rgba(255,255,255,.75); padding: 22mm 20mm; }
-  .cover::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 12mm 12mm; mask-image: linear-gradient(to bottom, #000, transparent 85%); }
-  .cover > * { position: relative; }
+  .cover { padding: 0; background: #fff; }
+  .cover-top { height: 64mm; padding: 0 20mm; display: flex; align-items: center; justify-content: space-between; border-bottom: 1.5mm solid var(--red); }
+  .cover-top img { height: 24mm; display: block; }
+  .cover-top .cover-title { color: var(--muted); margin: 0; text-align: right; line-height: 1.8; }
+  .cover-body { flex: 1; position: relative; display: flex; flex-direction: column; padding: 20mm; color: rgba(255,255,255,.75); background: radial-gradient(160mm 120mm at 100% 0%, rgba(198,42,53,.35), transparent 60%), var(--navy); }
+  .cover-body::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 12mm 12mm; mask-image: linear-gradient(to bottom, #000, transparent 85%); }
+  .cover-body > * { position: relative; }
   .logo-chip { background: #fff; border-radius: 4mm; padding: 4mm 6mm; align-self: flex-start; }
   .logo-chip img { height: 16mm; display: block; }
   .cover h1 { color: #fff; font-size: 44pt; line-height: 1.02; margin-top: auto; }
@@ -43,7 +47,7 @@
   .cover-meta { margin-top: 14mm; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,.15); font-family: var(--mono); font-size: 7.5pt; }
   .cover-meta div { padding: 5mm 4mm 0 0; }
   .cover-meta b { display: block; color: #fff; }
-  .cover-title { font-family: var(--mono); color: #fff; font-size: 9pt; letter-spacing: .2em; text-transform: uppercase; margin-top: 8mm; }
+  .cover-title { font-family: var(--mono); font-size: 9pt; letter-spacing: .2em; text-transform: uppercase; }
 
   /* blocks */
   .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; }
@@ -103,18 +107,22 @@
 
 <!-- 1. Cover -->
 <section class="page cover">
-  <div class="logo-chip"><img src="assets/logo.png" alt="Ventura Solutions Zambia Limited"></div>
-  <div class="cover-title">Company Profile · 2026</div>
-  <h1>
-    <span>Keep every register right.</span>
-    <span>Run every AGM.</span>
-    <span>Return every <span class="hl">lost share.</span></span>
-  </h1>
-  <p style="font-size:12.5pt;max-width:140mm;margin-top:6mm">Share registry management, corporate actions, virtual meetings and asset reunification for Zambia's capital market.</p>
-  <div class="cover-meta">
-    <div><b>SECZ registered</b>Share transfer agent</div>
-    <div><b>Lusaka, Zambia</b>Woodlands office</div>
-    <div><b>venturasolutionszm.com</b>enquiries@venturasolutionszm.com</div>
+  <div class="cover-top">
+    <img src="assets/logo.png" alt="Ventura Solutions Zambia Limited">
+    <div class="cover-title">Company Profile<br>2026</div>
+  </div>
+  <div class="cover-body">
+    <h1>
+      <span>Keep every register right.</span>
+      <span>Run every AGM.</span>
+      <span>Return every <span class="hl">lost share.</span></span>
+    </h1>
+    <p style="font-size:12.5pt;max-width:140mm;margin-top:6mm">Share registry management, corporate actions, virtual meetings and asset reunification for Zambia's capital market.</p>
+    <div class="cover-meta">
+      <div><b>SECZ registered</b>Share transfer agent</div>
+      <div><b>Lusaka, Zambia</b>Woodlands office</div>
+      <div><b>venturasolutionszm.com</b>enquiries@venturasolutionszm.com</div>
+    </div>
   </div>
 </section>
 

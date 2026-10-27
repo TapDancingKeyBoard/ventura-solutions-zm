@@ -243,8 +243,7 @@ section:not(.dark) .step::before { color: var(--red); }
 /* Footer */
 .site-footer { background: var(--ink); color: rgba(255,255,255,.6); padding: 72px 0 32px; font-size: .93rem; }
 .foot-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 40px; }
-.foot-logo { background: #fff; border-radius: 12px; padding: 10px 14px; display: inline-block; margin-bottom: 18px; }
-.foot-logo img { height: 40px; width: auto; }
+.foot-logo { display: block; height: 48px; width: auto; margin-bottom: 20px; }
 .site-footer h4 { color: #fff; font-family: var(--mono); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; margin-bottom: 16px; }
 .site-footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
 .site-footer a { text-decoration: none; }
