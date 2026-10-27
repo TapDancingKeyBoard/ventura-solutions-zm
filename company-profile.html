@@ -39,8 +39,7 @@
   .cover-body { flex: 1; position: relative; display: flex; flex-direction: column; padding: 20mm; color: rgba(255,255,255,.75); background: radial-gradient(160mm 120mm at 100% 0%, rgba(198,42,53,.35), transparent 60%), var(--navy); }
   .cover-body::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 12mm 12mm; mask-image: linear-gradient(to bottom, #000, transparent 85%); }
   .cover-body > * { position: relative; }
-  .logo-chip { background: #fff; border-radius: 4mm; padding: 4mm 6mm; align-self: flex-start; }
-  .logo-chip img { height: 16mm; display: block; }
+  .back-logo { height: 22mm; width: auto; align-self: flex-start; display: block; }
   .cover h1 { color: #fff; font-size: 44pt; line-height: 1.02; margin-top: auto; }
   .cover h1 > span { display: block; }
   .cover .eyebrow { color: #FF8C93; }
@@ -307,7 +306,7 @@
 
 <!-- 7. Back cover -->
 <section class="page back">
-  <div class="logo-chip"><img src="assets/logo.png" alt="Ventura Solutions Zambia Limited"></div>
+  <img class="back-logo" src="assets/logo-grey-light.png" alt="Ventura Solutions Zambia Limited">
   <div style="margin-top:auto">
     <span class="eyebrow">Contact us</span>
     <h2>Let's talk about your register.</h2>
