@@ -261,9 +261,24 @@ section:not(.dark) .step::before { color: var(--red); }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .pill.live::before { animation: none; } }
 
 /* Responsive */
+/* Live-site wording additions */
+.svc-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.note { border-left: 3px solid var(--red); background: var(--bg-2); padding: 18px 22px; border-radius: 0 var(--radius) var(--radius) 0; color: var(--text); font-size: .98rem; margin: 20px 0 28px; }
+.note-dark { background: var(--navy); color: rgba(255,255,255,.88); border-left-color: var(--navy); border-radius: var(--radius); }
+.list-title { font-family: var(--mono); font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; color: var(--ink); margin: 8px 0 0; }
+.checks-2 { grid-template-columns: 1fr 1fr; column-gap: 40px; }
+.checks-2 li { padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.eq-foot { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: stretch; }
+.eq-foot .note { margin: 0; }
+.outcomes-dark .outcome { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius); padding: 28px; }
+.outcomes-dark .outcome .ic { background: rgba(198,42,53,.18); color: #FF8C93; }
+.outcomes-dark .outcome p { color: rgba(255,255,255,.7); }
+.hero .list-rows .row { justify-content: flex-start; }
+
 @media (max-width: 1000px) {
   .hero-grid, .feature, .contact-grid, .svc-detail { grid-template-columns: 1fr; gap: 48px; }
-  .svc-grid { grid-template-columns: repeat(2, 1fr); }
+  .svc-grid, .svc-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .checks-2, .eq-foot { grid-template-columns: 1fr; }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .outcomes, .promise, .mvv { grid-template-columns: 1fr; gap: 24px; }
   .promise > div { padding-right: 0; }
@@ -286,7 +301,7 @@ section:not(.dark) .step::before { color: var(--red); }
 }
 @media (max-width: 560px) {
   .wrap { padding: 0 16px; }
-  .svc-grid, .steps, .row2, .seg, .foot-grid, .toc { grid-template-columns: 1fr; }
+  .svc-grid, .svc-grid-3, .steps, .row2, .seg, .foot-grid, .toc { grid-template-columns: 1fr; }
   .cta { padding: 32px 24px; border-radius: 20px; }
   .form { padding: 24px; }
   .svc-block { grid-template-columns: 1fr; gap: 16px; }

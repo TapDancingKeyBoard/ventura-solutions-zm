@@ -24,26 +24,18 @@ if ('IntersectionObserver' in window) {
 // Footer year
 document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
 
-// Contact form: preselect enquiry type from ?type=, then compose an email.
-// Swap this for a form service (e.g. Formspree) once hosting is decided.
+// Contact form: compose an email to the office.
 const form = document.querySelector('#enquiry');
 if (form) {
-  const type = new URLSearchParams(location.search).get('type');
-  if (type) {
-    const radio = form.querySelector(`input[name="type"][value="${type}"]`);
-    if (radio) radio.checked = true;
-  }
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const d = new FormData(form);
-    const kind = d.get('type') === 'shareholder' ? 'Shareholder / VARP' : 'Company services';
-    const subject = `Website enquiry (${kind}) – ${d.get('name')}`;
+    const subject = `Website enquiry – ${d.get('name')}`;
     const body = [
       `Name: ${d.get('name')}`,
       `Phone: ${d.get('phone')}`,
       `Email: ${d.get('email')}`,
       d.get('company') ? `Company: ${d.get('company')}` : null,
-      `Enquiry type: ${kind}`,
       '',
       d.get('message'),
     ].filter((l) => l !== null).join('\n');
